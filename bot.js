@@ -168,7 +168,7 @@ client.on('message', msg => {
     if(msg.member.hasPermission("MANAGE_MESSAGES")) {
     if (textxt == "") {
         msg.delete().then
-    msg.channel.send("***```Supply A Number 👌```***").then(m => m.delete(3000));
+    msg.channel.send("***```إدخل الرقم```***").then(m => m.delete(3000));
 } else {
     msg.delete().then
     msg.delete().then
@@ -3273,7 +3273,23 @@ client.on('guildMemberAdd', member => {
 
 
 
-
+   client.on('message',async message => {
+  if(message.content.startsWith(prefix + "voiceonline")) {
+  if(!message.guild.member(message.author).hasPermissions('MANAGE_CHANNELS')) return message.reply(':x: **ليس لديك الصلاحيات الكافية**');
+  if(!message.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return message.reply(':x: **ليس معي الصلاحيات الكافية**');
+  message.channel.send(':white_check_mark:| **تم عمل الروم بنجاح**');
+  message.guild.createChannel(`Pixel Online : [ ${message.guild.members.filter(m => m.voiceChannel).size} ]` , 'voice').then(c => {
+    console.log(`Pixel Online channel setup for guild: \n ${message.guild.name}`);
+    c.overwritePermissions(message.guild.id, {
+      CONNECT: false,
+      SPEAK: false
+    });
+    setInterval(() => {
+      c.setName(`Pixel Online : [ ${message.guild.members.filter(m => m.voiceChannel).size} ]`)
+    },1000);
+  });
+  }
+});
 
 
 	
