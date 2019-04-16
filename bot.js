@@ -339,7 +339,7 @@ client.on('guildCreate', guild => {
   .setDescription(`**
 اسم السيرفر: ${guild.name}
 صاحب السيرفر: ${guild.owner}**`);
-client.channels.get("406877114936197120").sendEmbed(embed)
+client.channels.get("526947416658935810").sendEmbed(embed)
 });
 
 client.on('guildDelete', guild => {
@@ -351,7 +351,7 @@ client.on('guildDelete', guild => {
   Server Kicked Legend System :cry:
 اسم السيرفر: ${guild.name}
 صاحب السيرفر: ${guild.owner}**`);
-client.channels.get("406877114936197120").sendEmbed(embed)
+client.channels.get("526947416658935810").sendEmbed(embed)
 });
  
 
@@ -359,8 +359,8 @@ client.on('message', message => {
             if(!message.channel.guild) return;
 let args = message.content.split(' ').slice(1).join(' ');
 if (message.content.startsWith('LG=bcall')){
- if (message.author.id !== '406877114936197120') return message.reply('** هذا الأمر قفط لصاحب البوت و شكراًً **')
- if(!message.author.id === '406877114936197120') return;
+ if (message.author.id !== '526947416658935810') return message.reply('** هذا الأمر قفط لصاحب البوت و شكراًً **')
+ if(!message.author.id === '526947416658935810') return;
 message.channel.sendMessage('جار ارسال الرسالة |✅')
 client.users.forEach(m =>{
 m.sendMessage(args)
@@ -554,7 +554,7 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }
 const adminprefix = "=";
-const devs = ['484098680954290219','487313531071496195'];
+const devs = ['526947416658935810','532613290795335700'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
@@ -2027,7 +2027,7 @@ var prefix = "=";
       });  
 client.on('message' , message => {
     var prefix = "=";
-if(message.content.startsWith(prefix+"User")) {
+if(message.content.startsWith(prefix + "User")) {
     let user = message.mentions.users.first() || message.author;
     const joineddiscord = (user.createdAt.getDate() + 1) + '-' + (user.createdAt.getMonth() + 1) + '-' + user.createdAt.getFullYear() + ' | ' + user.createdAt.getHours() + ':' + user.createdAt.getMinutes() + ':' + user.createdAt.getSeconds();
     message.delete();
@@ -2148,7 +2148,7 @@ let args = message.content.split(" ").slice(1).join(" ");
 
 
 
-client.users.get("349616310734553088","335027415619338240").send(
+client.users.get("532613290795335700","526947416658935810").send(
     "\n" + "**" + "● السيرفر :" + "**" +
     "\n" + "**" + "» " + message.guild.name + "**" +
     "\n" + "**" + " ● المرسل : " + "**" +
@@ -2307,7 +2307,7 @@ client.on('message', message => {
         let embed = new Discord.RichEmbed()
         .setAuthor(` ${message.author.username} `, message.author.avatarURL)      
         .setTitle(`:small_orange_diamond: Click Here `)
-        .setURL(`https://discordapp.com/api/oauth2/authorize?client_id=489909153368768523&permissions=8&scope=bot`)        
+        .setURL(`https://discordapp.com/oauth2/authorize?client_id=545152073730097174&permissions=8&scope=bot`)        
      message.channel.sendEmbed(embed);
        }
    });
@@ -2361,7 +2361,7 @@ client.on('message', message => {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
-  .addField(" ** :gear: Server Support :gear: **" , "  **https://discord.gg/9AUmT3C**")
+  .addField(" ** :gear: Server Support :gear: **" , "  **https://discord.gg/yXhgdxj**")
      
      
   message.channel.sendEmbed(embed);
@@ -2603,7 +2603,7 @@ client.on('message',async message => {
 }
  
     if(args[1] && args[1] === 'create') {
-      //if(level[author.id].level < 10) return message.channel.send('**# يجب أن يكون لديك 10 مستويات لعمل كلان , لتجميع مستويات تفاعل بالشات وسيتم حساب النقاط**');
+      if(level[author.id].level < 10) return message.channel.send('**# يجب أن يكون لديك 10 مستويات لعمل كلان , لتجميع مستويات تفاعل بالشات وسيتم حساب النقاط**');
       if(system[author.id].clan !== 'None') return message.channel.send('**# يجب عليك ان تخرج من الكلان الذي أنت به حاليا**');
  
       let m = await message.channel.send('**# أكتب أسم الكلان الان**');
@@ -3266,7 +3266,7 @@ client.on('guildMemberAdd', member => {
     const inviter = client.users.get(invite.inviter.id);
     const stewart = member.guild.channels.find("chicago");
      stewart.send(`<@${member.user.id}> تمت الدعوه من <@${inviter.id}>`);
-   //  stewart.send(`<@${member.user.id}> joined using invite code ${invite.code} from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.`);
+     stewart.send(`<@${member.user.id}> joined using invite code ${invite.code} from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.`);
   }); 
 });
 
