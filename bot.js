@@ -2428,6 +2428,14 @@ client.on('message', message => {
       }
 });
 
+client.on('message', message => {
+    if (message.content === '=vip') {
+        message.reply('لـوحـة الـتـحـكـم عـنـد :
+-
+<@532613290795335700>
+<@526947416658935810>');
+      }
+});
 
 
 
